@@ -1,10 +1,10 @@
 const path = require('path');
 
-module.export = {
-    entry: './src/index.js',
+module.exports = {
+    entry: './src/js/index.js',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, '../dist')
     },
     module: {
         rules: [
@@ -18,8 +18,8 @@ module.export = {
               }
             }
           }, {
-            test: /\.css$/i,
-            use: ['style-loader', 'css-loader']
+            test: /\.s?css$/,
+            use: ['style-loader', 'css-loader', 'sass-loader']
           }
         ]
       }
